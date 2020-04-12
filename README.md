@@ -6,7 +6,7 @@ License: [MIT](https://opensource.org/licenses/MIT)
 
 Version: 1.0.0
 
-Document version: 1.0.5 
+Document version: 1.0.6 
 
 Date: 12/04/2020
 
@@ -81,7 +81,7 @@ http://192.168.2.56/up - for moving the shutters down
 http://192.168.2.56/version - getting the firmware version
 ```
 
-You can also use the [RollerShutterApp](https://github.com/sbogutzky/RollerShutterApp/). Make sure you change the IP address in the .NET sources.
+You can also use the [RollerShutterApp](https://github.com/sbogutzky/RollerShutterApp/). Make sure you change the IP address in the source code of the plattform code.
 
 ## Author and Contribution
 As by the License this is free software released by the Simon Bogutzky. The author (Simon Bogutzky) welcomes external contributors to freely use and extend this software. If you need some help, please write an [issue](https://github.com/sbogutzky/RollerShutterFirmware/issues).
