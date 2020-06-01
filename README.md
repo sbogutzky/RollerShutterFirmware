@@ -4,7 +4,7 @@ Authors: Simon Bogutzky
 
 License: [MIT](https://opensource.org/licenses/MIT)
 
-Version: 1.2.0
+Version: 1.1.0
 
 Document version: 1.1.0 
 
