@@ -14,17 +14,28 @@
 */
 
 #include <ESP8266WebServer.h>
+#include <ESP8266WiFi.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 
 const char* ssid = "";
 const char* password = "";
 
 ESP8266WebServer server(80);
 
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP);
 
-const char* vers = "1.0.1";
+const char* vers = "1.2.0";
 const int dwn = 12;
 const int stp = 13;
 const int up = 14;
+
+String formattedTime;
+String dayStamp;
+String timeStamp;
+long timer = 0;
+long timeout = 1000;
 
 void handleRoot() {
   server.send(200, "text/plain; charset=utf-8", "Roller shutter webserver");
@@ -98,6 +109,14 @@ void setup(void){
 
   server.begin();
   Serial.println("HTTP server started");
+
+  timeClient.begin();
+  
+  // GMT +1 = 3600
+  // GMT +8 = 28800
+  // GMT -1 = -3600
+  // GMT 0 = 0
+  timeClient.setTimeOffset(7200);
 }
 
 void resetCmd() {
@@ -109,4 +128,19 @@ void resetCmd() {
 
 void loop(void){
   server.handleClient();
+  if (millis() > timeout + timer) {
+    timer = millis();
+    
+    while(!timeClient.update()) {
+      timeClient.forceUpdate();
+    }
+
+    formattedTime = timeClient.getFormattedTime();
+    Serial.println(formattedTime);
+
+    if (formattedTime == "11:30:00") {
+      resetCmd();
+      digitalWrite(dwn, LOW);
+    }
+  }
 }

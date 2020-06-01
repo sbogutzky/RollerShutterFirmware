@@ -1,17 +1,17 @@
 
-# RollerShutterFirmware: Firmware for an esp8266 to control VELUX INTEGRA shutters
+# RollerShutterFirmware: Firmware for an ESP8266 to Control VELUX INTEGRA Shutters
 Authors: Simon Bogutzky
 
 License: [MIT](https://opensource.org/licenses/MIT)
 
-Version: 1.0.1
+Version: 1.2.0
 
-Document version: 1.0.8 
+Document version: 1.1.0 
 
-Date: 12/04/2020
+Date: 01/06/2020
 
 ## What is the RollerShutterFirmware?
-The RollerShutterFirmware is a firmware for an esp8266 to control for example VELUX INTEGRA via an integrated web server or the [RollerShutterApp](https://github.com/sbogutzky/RollerShutterApp/).
+The RollerShutterFirmware is a firmware for an esp8266 to control for example VELUX INTEGRA via an integrated web server or the [RollerShutterApp](https://github.com/sbogutzky/RollerShutterApp/) or timer based.
 
 ## Using the RollerShutterFirmware
 
@@ -84,4 +84,4 @@ http://192.168.2.56/version - getting the firmware version
 You can also use the [RollerShutterApp](https://github.com/sbogutzky/RollerShutterApp/). Make sure you change the IP address in the source code of the platform code.
 
 ## Author and Contribution
-As by the License this is free software released by the Simon Bogutzky. The author (Simon Bogutzky) welcomes external contributors to freely use and extend this software. If you need some help, please write an [issue](https://github.com/sbogutzky/RollerShutterFirmware/issues).
+As expressed by license, this is free software published by Simon Bogutzky. The author (Simon Bogutzky) welcomes external contributors to freely use and extend this software. If you need help, please write an [issue](https://github.com/sbogutzky/RollerShutterFirmware/issues).
